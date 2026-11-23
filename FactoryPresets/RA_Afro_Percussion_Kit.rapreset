@@ -1,0 +1,63 @@
+{
+  "format": "RA Sampler Preset",
+  "version": 1,
+  "name": "RA_Afro_Percussion_Kit",
+  "slots": [
+    {
+      "category": "Kick",
+      "sample": "../FactoryLibrary/Kick/Kick_01.wav",
+      "midi_note": 36,
+      "root_note": 36,
+      "loop": false
+    },
+    {
+      "category": "Snare",
+      "sample": "../FactoryLibrary/Snare/Snare_01.wav",
+      "midi_note": 38,
+      "root_note": 38,
+      "loop": false
+    },
+    {
+      "category": "Clap",
+      "sample": "../FactoryLibrary/Clap/Clap_01.wav",
+      "midi_note": 39,
+      "root_note": 39,
+      "loop": false
+    },
+    {
+      "category": "Closed_Hat",
+      "sample": "../FactoryLibrary/Closed_Hat/Closed_Hat_01.wav",
+      "midi_note": 42,
+      "root_note": 42,
+      "loop": false
+    },
+    {
+      "category": "Open_Hat",
+      "sample": "../FactoryLibrary/Open_Hat/Open_Hat_01.wav",
+      "midi_note": 46,
+      "root_note": 46,
+      "loop": false
+    },
+    {
+      "category": "Rim",
+      "sample": "../FactoryLibrary/Rim/Rim_01.wav",
+      "midi_note": 37,
+      "root_note": 37,
+      "loop": false
+    },
+    {
+      "category": "Tom",
+      "sample": "../FactoryLibrary/Tom/Tom_01.wav",
+      "midi_note": 45,
+      "root_note": 45,
+      "loop": false
+    },
+    {
+      "category": "Percussion",
+      "sample": "../FactoryLibrary/Percussion/Percussion_01.wav",
+      "midi_note": 54,
+      "root_note": 54,
+      "loop": false
+    }
+  ]
+}

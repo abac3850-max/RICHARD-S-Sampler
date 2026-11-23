@@ -1,0 +1,58 @@
+RA SAMPLER — BUILD STATUS AND WINDOWS INSTRUCTIONS
+==================================================
+
+IMPORTANT
+---------
+This package contains JUCE/C++ source code, NOT a compiled VST3 binary.
+A Windows VST3 must be built with Microsoft's Windows compiler toolchain.
+
+I attempted CMake configuration in the available environment. It failed
+because github.com could not be reached to download JUCE 8.0.10. This
+environment also does not have the Windows MSVC toolchain. I therefore
+cannot honestly provide an untested file as a working VST3.
+
+BUILD ON WINDOWS 10/11
+---------------------
+1. Install Visual Studio 2022 with "Desktop development with C++" and a
+   Windows 10/11 SDK.
+2. Install CMake 3.22+ and Git for Windows.
+3. Extract this ZIP to a writable folder, e.g. C:\Audio\RA_Sampler.
+4. Ensure internet access for the first build; CMake fetches JUCE 8.0.10.
+5. Double-click build_windows.bat.
+6. If successful, it copies the VST3 to:
+   C:\Program Files\Common Files\VST3\RA Sampler.vst3
+7. Restart Studio One and rescan VST3 plugins.
+
+MANUAL BUILD
+------------
+From "x64 Native Tools Command Prompt for VS 2022" in this folder:
+
+  cmake -S . -B build -A x64
+  cmake --build build --config Release --target RASampler_VST3
+
+CURRENT PROTOTYPE LIMITATIONS
+-----------------------------
+- Early development prototype; not release-quality or DAW-verified.
+- Sample audio is not embedded in saved DAW state. Source files must remain
+  available; relinking/portable project packaging is not complete.
+- Pitch and pan controls are not fully connected to the audio engine.
+- Reverse playback, tempo sync, slicing, undo/redo and complete preset
+  persistence are not complete.
+- Factory kits require FactoryLibrary and FactoryPresets to remain beside
+  the project in this development build.
+- Format support depends on JUCE's available audio readers; not every codec
+  or container is guaranteed.
+- Audio-thread safety and broad DAW compatibility testing remain necessary.
+
+FIRST TESTS
+-----------
+After building, load the instrument in Studio One:
+- Confirm it appears as an instrument.
+- Load a WAV into slot 1 and trigger MIDI C4.
+- Load a factory kit and test its mapped notes.
+- Move start/end and loop handles; test fades.
+- Switch all ten skins.
+- Save/reopen a DAW project and note the sample-persistence limitation.
+
+If the build fails, send the complete command-window output so the errors
+can be diagnosed accurately.
